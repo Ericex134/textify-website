@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
+import { getPublicImagePath } from "../utils/imageUtils";
 
 const PricingContainer = styled.div`
   padding-top: 120px;
@@ -311,8 +312,8 @@ const PricingPage = () => {
 
           <PricingHeroGraphic>
             <img
-              src={process.env.PUBLIC_URL + "/assets/PricingGraphic.png"}
-              alt="Textify Pricing Packages"
+              src={getPublicImagePath("assets/PricingGraphic.png")}
+              alt="Textify Pricing Overview"
             />
           </PricingHeroGraphic>
         </HeroSection>

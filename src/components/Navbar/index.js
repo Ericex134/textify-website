@@ -16,6 +16,7 @@ import {
   DropdownToggle,
   DropdownIcon,
 } from "./NavbarStyles";
+import { getPublicImagePath } from "../../utils/imageUtils";
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -92,7 +93,7 @@ const Navbar = () => {
       <NavContainer className="container">
         <NavLogo to="/">
           <LogoImg
-            src={process.env.PUBLIC_URL + "/assets/textify1.png"}
+            src={getPublicImagePath("assets/textify1.png")}
             alt="Textify Logo"
           />
         </NavLogo>

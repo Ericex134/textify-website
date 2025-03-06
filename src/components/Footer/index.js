@@ -13,6 +13,7 @@ import {
   FooterBottom,
   Copyright,
 } from "./FooterStyles";
+import { getPublicImagePath } from "../../utils/imageUtils";
 
 const Footer = () => {
   return (
@@ -23,7 +24,7 @@ const Footer = () => {
             <FooterLogo>
               <Link to="/">
                 <img
-                  src={process.env.PUBLIC_URL + "/assets/textify1.png"}
+                  src={getPublicImagePath("assets/textify1.png")}
                   alt="Textify Logo"
                 />
               </Link>
