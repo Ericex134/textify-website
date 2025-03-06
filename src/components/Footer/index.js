@@ -24,7 +24,7 @@ const Footer = () => {
             <FooterLogo>
               <Link to="/">
                 <img
-                  src={getPublicImagePath("assets/textify1.png")}
+                  src={getPublicImagePath("Assets/textify1.png")}
                   alt="Textify Logo"
                 />
               </Link>

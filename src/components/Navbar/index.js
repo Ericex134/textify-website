@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
-import logoImage from "../../assets/textify1.png";
+import logoImage from "../../Assets/textify1.png";
 import {
   Nav,
   NavContainer,

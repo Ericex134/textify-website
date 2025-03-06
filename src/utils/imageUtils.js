@@ -6,8 +6,8 @@
  */
 export const getPublicImagePath = (path) => {
   // For production, use a direct URL to the image
-  return `https://textify-website.vercel.app/assets/${path.replace(
-    "assets/",
+  return `https://textify-website.vercel.app/Assets/${path.replace(
+    "Assets/",
     ""
   )}`;
 };

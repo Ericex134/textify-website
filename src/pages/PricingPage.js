@@ -312,7 +312,7 @@ const PricingPage = () => {
 
           <PricingHeroGraphic>
             <img
-              src={getPublicImagePath("assets/PricingGraphic.png")}
+              src={getPublicImagePath("Assets/PricingGraphic.png")}
               alt="Textify Pricing Overview"
             />
           </PricingHeroGraphic>
