@@ -22,7 +22,10 @@ const Footer = () => {
           <FooterBrand>
             <FooterLogo>
               <Link to="/">
-                <img src="/images/textify1.png" alt="Textify Logo" />
+                <img
+                  src={process.env.PUBLIC_URL + "/assets/textify1.png"}
+                  alt="Textify Logo"
+                />
               </Link>
             </FooterLogo>
             <FooterDescription>

@@ -91,14 +91,14 @@ const Navbar = () => {
     <Nav scrolled={scrolled}>
       <NavContainer className="container">
         <NavLogo to="/">
-          <LogoImg src="/logo.png" alt="Textify Logo" />
-          Textify
+          <LogoImg
+            src={process.env.PUBLIC_URL + "/assets/textify1.png"}
+            alt="Textify Logo"
+          />
         </NavLogo>
-
         <MobileIcon onClick={toggleMobileMenu}>
           {mobileMenuOpen ? "✕" : "☰"}
         </MobileIcon>
-
         <NavMenu open={mobileMenuOpen}>
           <NavItem>
             <NavLink to="/" active={isActive("/") ? "true" : undefined}>
