@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
+import logoImage from "../../assets/textify1.png";
 import {
   Nav,
   NavContainer,
@@ -16,7 +17,6 @@ import {
   DropdownToggle,
   DropdownIcon,
 } from "./NavbarStyles";
-import { getPublicImagePath } from "../../utils/imageUtils";
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -92,10 +92,7 @@ const Navbar = () => {
     <Nav scrolled={scrolled}>
       <NavContainer className="container">
         <NavLogo to="/">
-          <LogoImg
-            src={getPublicImagePath("assets/textify1.png")}
-            alt="Textify Logo"
-          />
+          <LogoImg src={logoImage} alt="Textify Logo" />
         </NavLogo>
         <MobileIcon onClick={toggleMobileMenu}>
           {mobileMenuOpen ? "✕" : "☰"}
