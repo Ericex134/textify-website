@@ -1,10 +1,11 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
-import logoImage from "../../Assets/textify1.png";
+import logoImage from "../../assets/textify1.png";
 import {
   Nav,
   NavContainer,
   NavLogo,
+  LogoText,
   NavMenu,
   NavItem,
   NavLink,
@@ -45,8 +46,8 @@ const Navbar = () => {
     const handleClickOutside = (event) => {
       if (
         dropdownRef.current &&
-        !dropdownRef.current.contains(event.target) &&
         navItemRef.current &&
+        !dropdownRef.current.contains(event.target) &&
         !navItemRef.current.contains(event.target)
       ) {
         setDropdownOpen(false);
@@ -59,9 +60,7 @@ const Navbar = () => {
     };
   }, []);
 
-  // Close dropdown when route changes
   useEffect(() => {
-    setDropdownOpen(false);
     setMobileMenuOpen(false);
   }, [location]);
 
@@ -70,7 +69,7 @@ const Navbar = () => {
   };
 
   const toggleDropdown = (e) => {
-    e.stopPropagation();
+    e.preventDefault();
     setDropdownOpen(!dropdownOpen);
   };
 
@@ -80,10 +79,13 @@ const Navbar = () => {
 
   const isProductActive = () => {
     const productPaths = [
+      "/services",
       "/products/text-to-return",
       "/products/social-media-planner",
       "/products/website-builder",
       "/products/automation",
+      "/products/seo",
+      "/products/lead-generation",
     ];
     return productPaths.includes(location.pathname);
   };
@@ -93,6 +95,7 @@ const Navbar = () => {
       <NavContainer className="container">
         <NavLogo to="/">
           <LogoImg src={logoImage} alt="Textify Logo" />
+          <LogoText>Textify</LogoText>
         </NavLogo>
         <MobileIcon onClick={toggleMobileMenu}>
           {mobileMenuOpen ? "✕" : "☰"}
@@ -117,6 +120,9 @@ const Navbar = () => {
             </DropdownToggle>
             <DropdownMenu ref={dropdownRef} open={dropdownOpen}>
               <DropdownItem>
+                <DropdownLink to="/services">All Services</DropdownLink>
+              </DropdownItem>
+              <DropdownItem>
                 <DropdownLink to="/products/text-to-return">
                   Text-to-Return
                 </DropdownLink>
@@ -134,6 +140,16 @@ const Navbar = () => {
               <DropdownItem>
                 <DropdownLink to="/products/automation">
                   Automation
+                </DropdownLink>
+              </DropdownItem>
+              <DropdownItem>
+                <DropdownLink to="/products/seo">
+                  SEO & Online Presence
+                </DropdownLink>
+              </DropdownItem>
+              <DropdownItem>
+                <DropdownLink to="/products/lead-generation">
+                  Lead Generation
                 </DropdownLink>
               </DropdownItem>
             </DropdownMenu>
@@ -155,7 +171,7 @@ const Navbar = () => {
             </NavLink>
           </NavItem>
           <NavItem>
-            <NavButton to="/get-started">Get Started</NavButton>
+            <NavButton to="/contact">Get Started</NavButton>
           </NavItem>
         </NavMenu>
       </NavContainer>

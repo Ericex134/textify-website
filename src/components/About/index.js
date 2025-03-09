@@ -14,6 +14,7 @@ import {
   FeatureDescription,
   AboutCTA,
 } from "./AboutStyles";
+import { getPublicImagePath } from "../../utils/imageUtils";
 
 const About = () => {
   return (
@@ -27,7 +28,7 @@ const About = () => {
 
         <AboutContent>
           <AboutImage
-            src="https://placehold.co/600x400/e6f0ff/2684ff?text=Textify+Dashboard"
+            src={getPublicImagePath("assets/dashboard.png")}
             alt="Textify CRM Dashboard"
           />
           <AboutTextContent>
@@ -57,7 +58,7 @@ const About = () => {
                 </FeatureDescription>
               </FeatureItem>
             </AboutFeatures>
-            <AboutCTA to="/how-it-works">Learn how it works →</AboutCTA>
+            <AboutCTA to="/services">Learn how it works →</AboutCTA>
           </AboutTextContent>
         </AboutContent>
       </AboutContainer>

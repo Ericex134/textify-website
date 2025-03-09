@@ -32,12 +32,34 @@ export const NavLogo = styled(Link)`
   text-decoration: none;
   font-size: 1.5rem;
   font-weight: 700;
-  color: ${(props) => props.theme.colors.primary};
+  color: ${(props) => props.theme.colors.text};
+  margin-right: ${(props) => props.theme.spacing.xl};
+  transition: all 0.3s ease;
+
+  &:hover {
+    color: ${(props) => props.theme.colors.primary};
+  }
+`;
+
+export const LogoText = styled.span`
+  margin-left: ${(props) => props.theme.spacing.sm};
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-size: 1.5rem;
+  background: linear-gradient(
+    135deg,
+    ${(props) => props.theme.colors.primary},
+    #4a7dff
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  letter-spacing: 0.5px;
 `;
 
 export const LogoImg = styled.img`
   height: 40px;
-  margin-right: ${(props) => props.theme.spacing.sm};
+  width: auto;
 `;
 
 export const MobileIcon = styled.div`

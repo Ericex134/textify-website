@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import logoImage from "../../assets/textify1.png";
 import {
   FooterContainer,
   FooterContent,
@@ -13,7 +14,6 @@ import {
   FooterBottom,
   Copyright,
 } from "./FooterStyles";
-import { getPublicImagePath } from "../../utils/imageUtils";
 
 const Footer = () => {
   return (
@@ -23,10 +23,7 @@ const Footer = () => {
           <FooterBrand>
             <FooterLogo>
               <Link to="/">
-                <img
-                  src={getPublicImagePath("Assets/textify1.png")}
-                  alt="Textify Logo"
-                />
+                <img src={logoImage} alt="Textify Logo" />
               </Link>
             </FooterLogo>
             <FooterDescription>

@@ -1,36 +1,34 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import {
+  HeroSection,
   HeroContainer,
   HeroContent,
   HeroTitle,
-  TitleLine,
-  Subtitle,
-  HighlightText,
-  CTAGroup,
+  HeroSubtitle,
+  HeroButtons,
   PrimaryButton,
   SecondaryButton,
+  HeroImage,
 } from "./HeroStyles";
 
 const Hero = () => {
   return (
-    <HeroContainer>
-      <HeroContent>
-        <HeroTitle>
-          <TitleLine>Never Miss Another</TitleLine>
-          <TitleLine>Business Call</TitleLine>
-        </HeroTitle>
-        <Subtitle>
-          Our <HighlightText>automated solution</HighlightText> instantly
-          responds to missed calls, keeping your customers engaged and your
-          business growing.
-        </Subtitle>
-        <CTAGroup>
-          <PrimaryButton to="/contact">Start Free Trial</PrimaryButton>
-          <SecondaryButton to="/how-it-works">See How It Works</SecondaryButton>
-        </CTAGroup>
-      </HeroContent>
-    </HeroContainer>
+    <HeroSection>
+      <HeroContainer className="container">
+        <HeroContent>
+          <HeroTitle>Never Miss Another Business Opportunity</HeroTitle>
+          <HeroSubtitle>
+            Our AI-powered text response system automatically engages with
+            missed calls, ensuring you capture every lead and maximize your
+            business potential.
+          </HeroSubtitle>
+          <HeroButtons>
+            <PrimaryButton to="/contact">Get Started</PrimaryButton>
+            <SecondaryButton to="/services">See How It Works</SecondaryButton>
+          </HeroButtons>
+        </HeroContent>
+      </HeroContainer>
+    </HeroSection>
   );
 };
 
