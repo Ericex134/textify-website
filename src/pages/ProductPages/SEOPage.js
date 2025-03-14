@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import seoImg from "../../assets/dashboard.png";
 
 const PageContainer = styled.div`
   padding-top: 120px;
@@ -211,6 +212,17 @@ const CTAButton = styled.a`
   }
 `;
 
+const ShowcaseSection = styled.div`
+  margin: ${(props) => props.theme.spacing.xxl} 0;
+  text-align: center;
+`;
+
+const ShowcaseImage = styled.img`
+  max-width: 100%;
+  border-radius: ${(props) => props.theme.borderRadius.large};
+  box-shadow: ${(props) => props.theme.shadows.large};
+`;
+
 const SEOPage = () => {
   return (
     <PageContainer>
@@ -272,6 +284,11 @@ const SEOPage = () => {
             </FeatureCard>
           </FeatureGrid>
         </FeatureSection>
+
+        <ShowcaseSection>
+          <SectionTitle>See It In Action</SectionTitle>
+          <ShowcaseImage src={seoImg} alt="SEO Dashboard Interface" />
+        </ShowcaseSection>
 
         <BenefitsSection>
           <SectionTitle>Why Choose Our SEO Services?</SectionTitle>

@@ -1,4 +1,5 @@
 import React from "react";
+import shopImage from "../../assets/shopbg.png";
 import {
   HeroSection,
   HeroContainer,
@@ -8,6 +9,7 @@ import {
   HeroButtons,
   PrimaryButton,
   SecondaryButton,
+  HeroImageWrapper,
   HeroImage,
 } from "./HeroStyles";
 
@@ -27,6 +29,9 @@ const Hero = () => {
             <SecondaryButton to="/services">See How It Works</SecondaryButton>
           </HeroButtons>
         </HeroContent>
+        <HeroImageWrapper>
+          <HeroImage src={shopImage} alt="Business Management Dashboard" />
+        </HeroImageWrapper>
       </HeroContainer>
     </HeroSection>
   );

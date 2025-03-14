@@ -2,6 +2,12 @@ import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { getPublicImagePath } from "../utils/imageUtils";
+import textReturnImg from "../assets/phone.png";
+import socialMediaImg from "../assets/mail.png";
+import websiteBuilderImg from "../assets/shopbg.png";
+import automationImg from "../assets/ai.png";
+import seoImg from "../assets/crm.png";
+import leadGenImg from "../assets/dashboard.png";
 
 const PageContainer = styled.div`
   padding-top: 120px;
@@ -79,12 +85,23 @@ const ServiceCard = styled(Link)`
 `;
 
 const ServiceImage = styled.div`
-  height: 200px;
-  background-color: ${(props) => props.theme.colors.primary}15;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 3rem;
+  height: 180px;
+  overflow: hidden;
+  border-radius: ${(props) => props.theme.borderRadius.large}
+    ${(props) => props.theme.borderRadius.large} 0 0;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    padding: ${(props) => props.theme.spacing.md};
+    transition: transform 0.3s ease;
+    background-color: ${(props) => props.theme.colors.surface};
+  }
+
+  ${ServiceCard}:hover & img {
+    transform: scale(1.05);
+  }
 `;
 
 const ServiceContent = styled.div`
@@ -199,7 +216,9 @@ const ServicesPage = () => {
 
         <ServicesGrid>
           <ServiceCard to="/products/text-to-return">
-            <ServiceImage>📱</ServiceImage>
+            <ServiceImage>
+              <img src={textReturnImg} alt="Text Return Dashboard" />
+            </ServiceImage>
             <ServiceContent>
               <ServiceTitle>Missed Call Text-Return Software</ServiceTitle>
               <ServiceDescription>
@@ -218,7 +237,9 @@ const ServicesPage = () => {
           </ServiceCard>
 
           <ServiceCard to="/products/social-media-planner">
-            <ServiceImage>📊</ServiceImage>
+            <ServiceImage>
+              <img src={socialMediaImg} alt="Social Media Dashboard" />
+            </ServiceImage>
             <ServiceContent>
               <ServiceTitle>Multi-Channel Marketing Platform</ServiceTitle>
               <ServiceDescription>
@@ -237,7 +258,9 @@ const ServicesPage = () => {
           </ServiceCard>
 
           <ServiceCard to="/products/website-builder">
-            <ServiceImage>🌐</ServiceImage>
+            <ServiceImage>
+              <img src={websiteBuilderImg} alt="Website Builder Dashboard" />
+            </ServiceImage>
             <ServiceContent>
               <ServiceTitle>AI-Powered Website Builder</ServiceTitle>
               <ServiceDescription>
@@ -255,7 +278,9 @@ const ServicesPage = () => {
           </ServiceCard>
 
           <ServiceCard to="/products/automation">
-            <ServiceImage>⚙️</ServiceImage>
+            <ServiceImage>
+              <img src={automationImg} alt="Automation Dashboard" />
+            </ServiceImage>
             <ServiceContent>
               <ServiceTitle>Workflow Automation</ServiceTitle>
               <ServiceDescription>
@@ -275,7 +300,9 @@ const ServicesPage = () => {
           </ServiceCard>
 
           <ServiceCard to="/products/seo">
-            <ServiceImage>🔍</ServiceImage>
+            <ServiceImage>
+              <img src={seoImg} alt="SEO Dashboard" />
+            </ServiceImage>
             <ServiceContent>
               <ServiceTitle>SEO & Online Presence Management</ServiceTitle>
               <ServiceDescription>
@@ -294,7 +321,9 @@ const ServicesPage = () => {
           </ServiceCard>
 
           <ServiceCard to="/products/lead-generation">
-            <ServiceImage>🎯</ServiceImage>
+            <ServiceImage>
+              <img src={leadGenImg} alt="Lead Generation Dashboard" />
+            </ServiceImage>
             <ServiceContent>
               <ServiceTitle>Lead Generation & Prospecting</ServiceTitle>
               <ServiceDescription>

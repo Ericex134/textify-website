@@ -42,13 +42,22 @@ export const HeroSection = styled.section`
 
 export const HeroContainer = styled.div`
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  text-align: center;
+  gap: ${(props) => props.theme.spacing.xxl};
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 ${(props) => props.theme.spacing.lg};
+
+  @media (max-width: ${(props) => props.theme.breakpoints.lg}) {
+    flex-direction: column;
+    text-align: center;
+  }
 `;
 
 export const HeroContent = styled.div`
-  max-width: 800px;
+  flex: 1;
+  max-width: 600px;
   animation: ${fadeIn} 0.8s ease-out forwards;
 `;
 
@@ -149,14 +158,30 @@ export const SecondaryButton = styled(Link)`
   }
 `;
 
-export const HeroImage = styled.img`
+export const HeroImageWrapper = styled.div`
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: ${fadeIn} 0.8s ease-out 0.2s forwards;
+  opacity: 0;
   max-width: 500px;
-  width: 100%;
+`;
+
+export const HeroImage = styled.img`
+  max-width: 100%;
+  height: auto;
   border-radius: ${(props) => props.theme.borderRadius.large};
-  box-shadow: ${(props) => props.theme.shadows.medium};
+  box-shadow: ${(props) => props.theme.shadows.large};
+  transform: perspective(1000px) rotateY(-5deg);
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: perspective(1000px) rotateY(0deg);
+  }
 
   @media (max-width: ${(props) => props.theme.breakpoints.lg}) {
-    max-width: 400px;
+    max-width: 70%;
   }
 `;
 

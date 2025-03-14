@@ -35,7 +35,7 @@ const About = () => {
             <AboutFeatures>
               <FeatureItem>
                 <FeatureIcon>📱</FeatureIcon>
-                <FeatureTitle>Automated Text Responses</FeatureTitle>
+                <FeatureTitle>Automated Responses</FeatureTitle>
                 <FeatureDescription>
                   Never miss another opportunity with instant text responses to
                   missed calls.
